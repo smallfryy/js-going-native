@@ -11,14 +11,14 @@
   <link rel="stylesheet" href="css/style.css">
 
   <body>
-    <
+
       <div class="row">
         <h1 class="title">Going Native</h1>
       </div>
     </header>
 
     <div class="row">
-    <!-- library of photo thumbnails pulled in from API-->
+    <!-- library of photo thumbnails pulled from Flickr API-->
       <div id="photo-grid" class="thumbnails"></div>
     </div>
 
@@ -30,11 +30,13 @@
   </body>
     
     <script src="js/app.js"></script>
+    
     <script>
-    var flikrURL = 'https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&format=json&nojsoncallback=1&gallery_id=72157663033498841&api_key=9e6435a5c19133a2125890534ed0ed98';
+    var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=9e6435a5c19133a2125890534ed0ed98&per_page=10&format=json&nojsoncallback=1";
 
     window.onload = function(){
-      var goNative(flikrURL);
+      var goNative(apiURL);
     };
     </script>
+
   </html>

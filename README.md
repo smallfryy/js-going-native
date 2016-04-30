@@ -1,8 +1,8 @@
-# js-going-native
+# js-going-native 👹
 Hello, world! I'm building a lightbox photo library in native JavaScript using the Flickr API. No JQuery here. 
 
-## Description
-So, why no JQuery? In this exercise I'm going under the hood of AJAX requests in raw JavaScript. No js libraries or frameworks here! This is a great opportunity to consider whether using JQuery is necessary in client-side js applications!
+## Description 
+So, why no JQuery? 😱 In this exercise I'm going under the hood of AJAX requests in raw JavaScript. No js libraries or frameworks here! This is a great opportunity to consider whether using JQuery is necessary in client-side js applications! 😎
 
 ## Technologies Used
 - Flickr API
@@ -18,3 +18,11 @@ So, why no JQuery? In this exercise I'm going under the hood of AJAX requests in
 ## Cross-Browser View
 - This should run on latest verison of Chrome, Safari, Firefox, IE.
 
+## Christmas Wish List
+- Integrate with Aframe
+- Some CSS animation on front-end
+- API unit testing
+- Tests in Selenium, Cucumber
+
+## Blogging 
+- 
