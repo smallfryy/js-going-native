@@ -41,26 +41,32 @@ function getAndPrintFirstPhoto(data){
   for (i = 0; i < photos.length; i++) {
     // console.log(photos[i]);
     // printOneJSONObject(photos[i]);
+    buildImageUrl(photos[i]);
     appendPhotoToGrid(photos[i]);
-    buildImageUrl(photos[i])
+    buildAmazingDiv(photos[i]);
   }
 };
 
 // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
 function buildImageUrl(photo){
-  var imgUrl = '<img src="<https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg" />';
-  console.log(imgUrl);
+  // build img URL 
+  var imgElement = '<img src="https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg" />';
+  appendPhotoToGrid(photo, imgElement);
+  buildAmazingDiv(photo, imgElement)
 };
 
-function appendPhotoToGrid(photo, imgUrl){
+function appendPhotoToGrid(photo, imgElement){
   // select photogrid and append div
   var iDiv = document.createElement('thumbnail'); 
-  iDiv.innerHTML = photo.title;
+  iDiv.innerHTML = photo.title + imgElement;
   document.getElementById('photo-grid').appendChild(iDiv);
+  buildAmazingDiv(photo, imgElement);
 }; 
 
+function buildAmazingDiv(photo){
+  var imgElement = '<img src="https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg" />';
+  var picture = "<div class=thumbnail>" + photo.title + imgElement+"</div>";
+};
+
 // getHTTP(apiURL, getAndPrintFirstPhoto); 
-
-
-
 

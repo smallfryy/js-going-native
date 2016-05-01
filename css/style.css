@@ -24,7 +24,7 @@ header {
 
 .title {
   text-align: center;
-  font-size: 3rem;
+  font-size: 1rem;
 }
 
 .footer {
@@ -36,11 +36,14 @@ header {
   text-align: center;
 }
 
-#thumbnails {
-  position: absolute;
-  height: 100px;
-  width: 100px;
-  border-radius: 2px;
+.thumbnails {
 }
+
+img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+
 
 
