@@ -1,6 +1,5 @@
 // make API dance 
-// working! bowchicka-wow-wow!
-var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=9e6435a5c19133a2125890534ed0ed98&per_page=10&format=json&nojsoncallback=1";
+var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=13b1d783bf00e8dcbd3c45f47097c796&tags=tarot&per_page=16&format=json&nojsoncallback=1";
 // async call 
 function getHTTP(url, callBack) {
   
@@ -11,62 +10,42 @@ function getHTTP(url, callBack) {
       if (httpRequest.readyState === 4 && httpRequest.status === 200) {
         // collect JSON object 
         var data = JSON.parse(httpRequest.responseText);
-        // transform scary JSON into data in grid
+        // transform scary JSON into data in thumbnail grid
           if (callBack) 
-              callBack(data);
+              callBack(data); 
           } else {error: "there was a problem"}
       }
-
   httpRequest.open('GET', url);
   httpRequest.send(); // asych request sent to server 
 };
 
-// print one JSON photo object
-function printOneJSONObject(photoJSON){
-  console.log(photoJSON.title);
-  console.log(photoJSON.id);
-}; 
-
-// return array of JSON photo objects
 function returnPhotoArray(scaryJSON){
   return scaryJSON['photos'].photo;
 };
  
-function getAndPrintFirstPhoto(data){
-  console.log(data);
-  // get one photo 
+// photo function factory 
+function buildPhotoObject(data){
   var photos = returnPhotoArray(data);
-  // print one JSON photo
-  console.log(photos);
   for (i = 0; i < photos.length; i++) {
-    // console.log(photos[i]);
-    // printOneJSONObject(photos[i]);
     buildImageUrl(photos[i]);
-    appendPhotoToGrid(photos[i]);
-    buildAmazingDiv(photos[i]);
+    // buildPhotoLightbox(photos[i]);
   }
 };
 
-// https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
-function buildImageUrl(photo){
-  // build img URL 
+function buildImageUrl(photo){ 
   var imgElement = '<img src="https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg" />';
   appendPhotoToGrid(photo, imgElement);
-  buildAmazingDiv(photo, imgElement)
 };
 
 function appendPhotoToGrid(photo, imgElement){
-  // select photogrid and append div
   var iDiv = document.createElement('thumbnail'); 
-  iDiv.innerHTML = photo.title + imgElement;
+  iDiv.innerHTML = '<div class=hey>' + imgElement + '<div class=phototitle>' + photo.title + '</div>' + '</div>';
   document.getElementById('photo-grid').appendChild(iDiv);
-  buildAmazingDiv(photo, imgElement);
 }; 
 
-function buildAmazingDiv(photo){
-  var imgElement = '<img src="https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg" />';
-  var picture = "<div class=thumbnail>" + photo.title + imgElement+"</div>";
+// getHTTP(apiURL, getAndPrintFirstPhoto); 
+function onMouseOverImage(photo, thumbnail){
+  thumbnail.onMouseOver(photo.title);
 };
 
-// getHTTP(apiURL, getAndPrintFirstPhoto); 
 
