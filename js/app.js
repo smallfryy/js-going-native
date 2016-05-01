@@ -7,23 +7,60 @@ function getHTTP(url, callBack) {
   var httpRequest = new XMLHttpRequest();
     
     httpRequest.onreadystatechange = function() {
+      // if http is ready to go and 200 a-ok error, then load this up
       if (httpRequest.readyState === 4 && httpRequest.status === 200) {
         // collect JSON object 
         var data = JSON.parse(httpRequest.responseText);
         // transform scary JSON into data in grid
           if (callBack) 
               callBack(data);
-          } else {error: "there was a problem" }
-
+          } else {error: "there was a problem"}
       }
 
   httpRequest.open('GET', url);
   httpRequest.send(); // asych request sent to server 
-}
+};
 
-getHTTP(apiURL, function(data) {
-  console.log(data['photos'].photo);
-});
+// print one JSON photo object
+function printOneJSONObject(photoJSON){
+  console.log(photoJSON.title);
+  console.log(photoJSON.id);
+}; 
+
+// return array of JSON photo objects
+function returnPhotoArray(scaryJSON){
+  return scaryJSON['photos'].photo;
+};
+ 
+function getAndPrintFirstPhoto(data){
+  console.log(data);
+  // get one photo 
+  var photos = returnPhotoArray(data);
+  // print one JSON photo
+  console.log(photos);
+  for (i = 0; i < photos.length; i++) {
+    // console.log(photos[i]);
+    // printOneJSONObject(photos[i]);
+    appendPhotoToGrid(photos[i]);
+    buildImageUrl(photos[i])
+  }
+};
+
+// https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
+function buildImageUrl(photo){
+  var imgUrl = '<img src="<https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg" />';
+  console.log(imgUrl);
+};
+
+function appendPhotoToGrid(photo, imgUrl){
+  // select photogrid and append div
+  var iDiv = document.createElement('thumbnail'); 
+  iDiv.innerHTML = photo.title;
+  document.getElementById('photo-grid').appendChild(iDiv);
+}; 
+
+// getHTTP(apiURL, getAndPrintFirstPhoto); 
+
 
 
 

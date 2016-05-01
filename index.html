@@ -22,7 +22,6 @@
       <div id="photo-grid" class="thumbnails"></div>
     </div>
 
-
     <div class=footer>
       Made with &hearts; by Holly Peck. &copy; 2016.
     </div>
@@ -35,7 +34,7 @@
     var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=9e6435a5c19133a2125890534ed0ed98&per_page=10&format=json&nojsoncallback=1";
 
     window.onload = function(){
-      getHTTP(apiURL);
+      getHTTP(apiURL, getAndPrintFirstPhoto, buildImageUrl); 
     }
     </script>
 

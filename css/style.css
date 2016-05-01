@@ -36,9 +36,11 @@ header {
   text-align: center;
 }
 
-.thumbnails {
+#thumbnails {
+  position: absolute;
   height: 100px;
   width: 100px;
+  border-radius: 2px;
 }
 
 
