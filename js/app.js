@@ -1,5 +1,9 @@
-// make API dance 
+// GOAL each function is a bonsai: simple, 
+// perfect, beautiful, responsible for performing
+// one task and one task only. 
+
 var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=13b1d783bf00e8dcbd3c45f47097c796&tags=tarot&per_page=16&format=json&nojsoncallback=1";
+
 // async call 
 function getHTTP(url, callBack) {
   
@@ -16,19 +20,19 @@ function getHTTP(url, callBack) {
           } else {error: "there was a problem"}
       }
   httpRequest.open('GET', url);
-  httpRequest.send(); // asych request sent to server 
+  httpRequest.send(); // asynch request sent to server 
 };
 
 function returnPhotoArray(scaryJSON){
   return scaryJSON['photos'].photo;
 };
  
-// photo function factory 
+// photo object factory 
 function buildPhotoObject(data){
   var photos = returnPhotoArray(data);
   for (i = 0; i < photos.length; i++) {
     buildImageUrl(photos[i]);
-    // buildPhotoLightbox(photos[i]);
+    buildPhotoLightBox(photos[i]);
   }
 };
 
@@ -39,13 +43,14 @@ function buildImageUrl(photo){
 
 function appendPhotoToGrid(photo, imgElement){
   var iDiv = document.createElement('thumbnail'); 
-  iDiv.innerHTML = '<div class=hey>' + imgElement + '<div class=phototitle>' + photo.title + '</div>' + '</div>';
+  iDiv.innerHTML = '<div class="hey">' + imgElement + '<div class=phototitle>' + photo.title + '</div>' + '</div>';
   document.getElementById('photo-grid').appendChild(iDiv);
 }; 
 
-// getHTTP(apiURL, getAndPrintFirstPhoto); 
-function onMouseOverImage(photo, thumbnail){
-  thumbnail.onMouseOver(photo.title);
+function buildPhotoLightBox(data){
+  document.getElementById("img").addEventListener("click", function() {alert("hello world!")});
 };
+
+
 
 

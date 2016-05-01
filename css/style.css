@@ -57,6 +57,9 @@ img {
   margin: 1em;
   float: left;
 }
+ a:hover {
+  background-color: blue;
+}
 
 
 
