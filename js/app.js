@@ -18,6 +18,7 @@ function getHTTP(url, callBack) {
       if (httpRequest.readyState === 4 && httpRequest.status === 200) {
         // collect JSON object 
         var data = JSON.parse(httpRequest.responseText);
+
         // transform scary JSON into data in thumbnail grid
           if (callBack) 
               callBack(data); 
@@ -49,14 +50,7 @@ function buildPhotoViewer(data){
 };
 
 
-
-
 // User Interactions
-function showLightBox(url) {
-
-  document.getElementById("lightbox").style.visibility = "visible";
-
-};
 
 function hideLightBox(){
    // hide the lightbox
@@ -64,23 +58,39 @@ function hideLightBox(){
 
 };
 
+function showLightBox(url) {
+
+  document.getElementById("lightbox").style.visibility = "visible";
+
+};
+
 
 
 function navigateRight(data) {
+  var photo = photoArray[currentPhotoIndex];
+ 
+  var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
+ 
   if (currentPhotoIndex < photoArray.length){
-  
+    
     currentPhotoIndex += 1;
-
-    console.log(photoArray[currentPhotoIndex]);
+  
+    document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>';
 
   }
 
 };
 
 function navigateLeft(data){
+  var photo = photoArray[currentPhotoIndex];
+  
+  var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
+
   if (currentPhotoIndex > 0){
   
     currentPhotoIndex -= 1;
+
+    document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>';
 
     console.log(photoArray[currentPhotoIndex]);
 
@@ -116,19 +126,11 @@ function buildThumbnailDiv(photo){
 };
 
 
-// click on image
-// show lightbox 
-// put image into lightbox 
-
 function buildPhotoLightBox(photo)  {
-
-  console.log(photoArray[currentPhotoIndex]);
-  
-    var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
-
-    var title = photo.title;
+  var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
+    
+  var title = photo.title;
   // grab lightbox div 
     document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>';
-  
  }
 
