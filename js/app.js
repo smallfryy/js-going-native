@@ -92,8 +92,6 @@ function navigateLeft(data){
 
     document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>';
 
-    console.log(photoArray[currentPhotoIndex]);
-
   }
 
 };
