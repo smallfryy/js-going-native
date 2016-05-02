@@ -4,6 +4,10 @@
 
 var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=13b1d783bf00e8dcbd3c45f47097c796&tags=tarot&per_page=16&format=json&nojsoncallback=1";
 
+var photoArray = [];
+
+var currentPhotoIndex = 0;
+
 // async call 
 function getHTTP(url, callBack) {
   
@@ -20,37 +24,103 @@ function getHTTP(url, callBack) {
           } else {error: "there was a problem"}
       }
   httpRequest.open('GET', url);
+
   httpRequest.send(); // asynch request sent to server 
 };
 
+
 function returnPhotoArray(scaryJSON){
+  
+  photoArray = scaryJSON['photos'].photo;
+  
   return scaryJSON['photos'].photo;
+
 };
  
-// photo object factory 
-function buildPhotoObject(data){
+
+// Main Application Logic 
+function buildPhotoViewer(data){
   var photos = returnPhotoArray(data);
   for (i = 0; i < photos.length; i++) {
-    buildImageUrl(photos[i]);
+    appendPhotoToGrid(photos[i]);
     buildPhotoLightBox(photos[i]);
   }
+
 };
 
-function buildImageUrl(photo){ 
-  var imgElement = '<img src="https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg" />';
-  appendPhotoToGrid(photo, imgElement);
+
+
+
+// User Interactions
+function showLightBox(url) {
+
+  document.getElementById("lightbox").style.visibility = "visible";
+
 };
 
-function appendPhotoToGrid(photo, imgElement){
-  var iDiv = document.createElement('thumbnail'); 
-  iDiv.innerHTML = '<div class="hey">' + imgElement + '<div class=phototitle>' + photo.title + '</div>' + '</div>';
-  document.getElementById('photo-grid').appendChild(iDiv);
+function hideLightBox(){
+   // hide the lightbox
+  document.getElementById("lightbox").style.visibility = "hidden";
+
+};
+
+
+
+function navigateRight(data) {
+  if (currentPhotoIndex < photoArray.length){
+  
+    currentPhotoIndex += 1;
+
+    console.log(photoArray[currentPhotoIndex]);
+
+  }
+
+};
+
+function navigateLeft(data){
+  if (currentPhotoIndex > 0){
+  
+    currentPhotoIndex -= 1;
+
+    console.log(photoArray[currentPhotoIndex]);
+
+  }
+
+};
+
+
+
+// DOM Manipulation
+function appendPhotoToGrid(photo){
+  // take json object and render in div element
+  var thumbdiv = buildThumbnailDiv(photo);
+  // select DOM element photo-grid and throw thumbnail inside 
+  document.getElementById('photo-grid').appendChild(thumbdiv);
 }; 
 
-function buildPhotoLightBox(data){
-  document.getElementById("img").addEventListener("click", function() {alert("hello world!")});
+
+
+// Templating Section 
+function buildThumbnailDiv(photo){
+  var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
+  var inner = '<div class="thumbnail" onclick="showLightBox(\'' + imgURL + '\')">' +
+                      '<div class="row">' + photo.title + '</div>' + 
+                        '<div class="container">' + 
+                              '<img src="' + imgURL + '"/>' +
+                        '</div>' +
+                  '</div>';
+
+  var iDiv = document.createElement('thumbnail'); 
+  iDiv.innerHTML = inner;
+
+  return iDiv;
 };
 
 
-
+function lightboxImage(photo){
+   document.getElementById('lightboxImage');
+   // build URL
+   // change photo image 
+  console.log(photo);
+}
 

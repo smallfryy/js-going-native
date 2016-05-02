@@ -19,7 +19,20 @@
 
     <div class="row">
     <!-- library of photo thumbnails pulled from Flickr API-->
-      <div id="photo-grid" class="thumbnails"></div>
+      <div id="photo-grid" class="thumbnails" ></div>
+    </div>
+
+    <!--lightbox-->
+    <div id="lightbox">
+
+      <div class="navigation">
+        <div id="left" onclick="navigateLeft()"> <-- </div>
+        <div id="right" onclick="navigateRight()"> --> </div>
+        <div id="close" onclick="hideLightBox()"> X </div>
+      </div>
+      <div class="image">
+        <img id="lightbox-image" src="http://ia.media-imdb.com/images/M/MV5BMTM4MjExOTgzM15BMl5BanBnXkFtZTcwMTY5OTk5Ng@@._V1_UY317_CR11,0,214,317_AL_.jpg">
+      </div>
     </div>
 
     <div class=footer>
@@ -34,7 +47,7 @@
     var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=13b1d783bf00e8dcbd3c45f47097c796&tags=bill+reid&per_page=16&format=json&nojsoncallback=1";
 
     window.onload = function(){
-      getHTTP(apiURL, buildPhotoObject); 
+      getHTTP(apiURL, buildPhotoViewer); 
     }
     </script>
 
