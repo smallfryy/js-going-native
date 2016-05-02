@@ -58,7 +58,7 @@ function hideLightBox(){
 
 };
 
-function showLightBox(url) {
+function showLightBox(imgURL) {
 
   document.getElementById("lightbox").style.visibility = "visible";
 
