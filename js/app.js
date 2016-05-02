@@ -110,14 +110,15 @@ function appendPhotoToGrid(photo){
 // Templating Section 
 function buildThumbnailDiv(photo){
   var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
-  var inner = '<div class="thumbnail" onclick="showLightBox(\'' + imgURL + '\')">' +
-                      '<div class="row">' + photo.title + '</div>' + 
-                        '<div class="image">' + 
-                              '<img src="' + imgURL + '"/>' +
-                        '</div>' +
-                  '</div>';
+  
+  var inner = '<div class="title">' + photo.title + '</div>' + 
+                '<div class="image-box">' + 
+                    '<img src="' + imgURL + '"/>' +
+              '</div>';
 
-  var iDiv = document.createElement('thumbnail'); 
+  var iDiv = document.createElement("div");
+  iDiv.setAttribute("class", "thumbnail");
+  iDiv.setAttribute("onClick", "showLightBox(\'" + imgURL + "\')");
   iDiv.innerHTML = inner;
 
   return iDiv;
@@ -129,6 +130,6 @@ function buildPhotoLightBox(photo)  {
     
   var title = photo.title;
   // grab lightbox div 
-    document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>';
+  document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>';
  }
 

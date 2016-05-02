@@ -11,29 +11,27 @@
   <link rel="stylesheet" href="css/style.css">
 
   <body>
-
-      <div class="row">
-        <h1 class="title">Going Native</h1>
-      </div>
-    </header>
+  <header>
+    <h1 class="title">Going Native</h1>
+  </header>
 
     <div class="row">
     <!-- library of photo thumbnails pulled from Flickr API-->
-      <div id="photo-grid" class="thumbnails" ></div>
+      <div id="photo-grid"></div>
     </div>
 
     <!--lightbox-->
 
-    <div id="lightbox" class="container">
+    <div id="lightbox">
 
       <div class="navigation">
-        <div id="left" onclick="navigateLeft()"> <--    </div>
-        <div id="right" onclick="navigateRight()"> -->   </div>
-        <div id="close" onclick="hideLightBox()"> X    </div>
+        <div id="left" onclick="navigateLeft()"> <-- </div>
+        <div id="right" onclick="navigateRight()"> --> </div>
+        <div id="close" onclick="hideLightBox()"> X </div>
       </div>
       
       <div class="image">
-        <div id="lightbox-image" onclick="buildPhotoLightbox()"></div>
+        <div id="lightbox-image" onclick="buildPhotoLightbox(photo)"></div>
       </div>
     </div>
 
