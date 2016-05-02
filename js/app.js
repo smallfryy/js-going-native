@@ -1,6 +1,6 @@
 // GOAL each function is a bonsai: simple, 
-// perfect, beautiful, responsible for performing
-// one task and one task only. 
+// perfect, beautiful. It is responsible 
+// for one task and one task only. 
 
 var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=13b1d783bf00e8dcbd3c45f47097c796&tags=tarot&per_page=16&format=json&nojsoncallback=1";
 
@@ -99,13 +99,12 @@ function appendPhotoToGrid(photo){
 }; 
 
 
-
 // Templating Section 
 function buildThumbnailDiv(photo){
   var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
   var inner = '<div class="thumbnail" onclick="showLightBox(\'' + imgURL + '\')">' +
                       '<div class="row">' + photo.title + '</div>' + 
-                        '<div class="container">' + 
+                        '<div class="image">' + 
                               '<img src="' + imgURL + '"/>' +
                         '</div>' +
                   '</div>';
@@ -117,10 +116,19 @@ function buildThumbnailDiv(photo){
 };
 
 
-function lightboxImage(photo){
-   document.getElementById('lightboxImage');
-   // build URL
-   // change photo image 
-  console.log(photo);
-}
+// click on image
+// show lightbox 
+// put image into lightbox 
+
+function buildPhotoLightBox(photo)  {
+
+  console.log(photoArray[currentPhotoIndex]);
+  
+    var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
+
+    var title = photo.title;
+  // grab lightbox div 
+    document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>';
+  
+ }
 
