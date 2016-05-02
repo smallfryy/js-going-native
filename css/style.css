@@ -41,38 +41,31 @@ div.title {
 }
 
 #photo-grid {
-margin-top: 2em;
- margin-left: 2em;
- margin-right: 2em;
- margin-bottom: 2em;
-
+  padding-left: 6em;
+  padding-right: 6em;
 }
 
-/*img {
-  max-width: 270px;
-  max-height: 270px;
-  padding: 20px;
+.thumbnail.title {
+  font-size: .7em;
+  padding: 1em;
 }
-*/
-.thumbnail {
+
+#left, #right {
+  float: left;
+}
+
+div.thumbnail {
   display: inline-block;
   float: left;
   text-align: center;
-  height: 300px;
-  width: 300px;
-  margin-left: 2em;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  margin-right: 2em;
+  height: 150px;
+  width: 150px;
+  margin: 2em;
 }
 
-.thumbnail .title {
-  font-size: 1em;
-}
-
-.thumbnail img { 
-  max-height: 270px; 
-  max-width: 270px; 
+.image-box img { 
+  height: 80%; 
+  width: 100%; 
 }
 
 #lightbox {
