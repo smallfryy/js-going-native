@@ -2,7 +2,13 @@
 // perfect, beautiful. It is responsible 
 // for one task and one task only. 
 
-var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=13b1d783bf00e8dcbd3c45f47097c796&tags=tarot&per_page=16&format=json&nojsoncallback=1";
+// BUGS:
+// type-error when nagivating through images
+// dim background when lightbox photo selected
+// prevent img thumbnails from expanding when lightbox is in view 
+
+
+var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=13b1d783bf00e8dcbd3c45f47097c796&tags=tarot&per_page=24&format=json&nojsoncallback=1";
 
 var photoArray = [];
 
