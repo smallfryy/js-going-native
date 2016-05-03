@@ -22,6 +22,7 @@ function getHTTP(url, callBack) {
         // transform scary JSON into data in thumbnail grid
           if (callBack) 
               callBack(data); 
+
           } else {error: "there was a problem"}
       }
   httpRequest.open('GET', url);
@@ -58,17 +59,18 @@ function hideLightBox(){
 
 };
 
-function showLightBox(imgURL) {
+function showLightBox(url) {
 
   document.getElementById("lightbox").style.visibility = "visible";
-
+  document.getElementById('lightbox-image').innerHTML = '<img src="' + url + '"/>';
+  console.log(url);
 };
 
 
 
 function navigateRight(data) {
   var photo = photoArray[currentPhotoIndex];
- 
+  
   var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
  
   if (currentPhotoIndex < photoArray.length){
@@ -130,6 +132,6 @@ function buildPhotoLightBox(photo)  {
     
   var title = photo.title;
   // grab lightbox div 
-  document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>';
+  document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>' + title;
  }
 
