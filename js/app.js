@@ -126,7 +126,6 @@ function buildThumbnailDiv(photo){
   return iDiv;
 };
 
-
 function buildPhotoLightBox(photo)  {
   var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
     

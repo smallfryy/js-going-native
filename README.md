@@ -6,7 +6,7 @@ So, why no JQuery? 😱 In this exercise I'm going under the hood of AJAX reques
 
 ## Technologies Used
 - Flickr API
-- JavaScript in the raw
+- JavaScript in the raw 
 
 ## User Experience 
 1. User arrives at a page and sees a 4x4 grid of photo images.  
