@@ -9,20 +9,18 @@
   <title>Holly Peck | Going Native</title>
   <link rel="icon" type="image/png" href="img/favicon.ico">
   <link rel="stylesheet" href="css/style.css">
+</head>
 
   <body>
   <header>
     <h1 class="title">Going Native 👺 </h1>
   </header>
 
-    <div class="row">
-    <!-- library of photo thumbnails pulled from Flickr API-->
-      <div id="photo-grid"></div>
-    </div>
+    <div class="container" id="photo-grid"></div>
 
     <!--lightbox-->
 
-    <div id="lightbox">
+    <div id="lightbox" class="lightbox">
 
       <div class="navigation">
         <div id="left" onclick="navigateLeft()"> 👈 ---- </div>
@@ -30,15 +28,13 @@
         <div id="close" onclick="hideLightBox()"> X </div>
       </div>
       
-      <div class="image">
-        <div id="lightbox-image" onclick="buildPhotoViewer()"></div>
-      </div>
+      <div class="image" id="lightbox-image" onclick="buildPhotoViewer()"></div>
     </div>
 
   
   <div class=footer>
       Made with &hearts; by Holly Peck. &copy; 2016.
-    </div>
+  </div>
 
   </body>
     
