@@ -28,7 +28,7 @@ div#wrapper {
 
 #header {
   background-color: #fff;
-  border-bottom: 0.05em solid #000;
+  border-bottom: 0.5px solid #000;
   height: 2em;
   padding-bottom: 2em;
 }
@@ -56,7 +56,7 @@ div#wrapper div#footer {
   font-size: 1em;
   position: fixed;
   padding-top: 1em;
-  border-top: 0.001em solid #000;
+  border-top: .01em solid #000;
   bottom: 0;
   left: 0;
 }
@@ -89,17 +89,18 @@ div.thumbnail {
 div#lightbox { 
   position: fixed;
   -moz-box-shadow:0 0 25px #111;
-  margin: 10em;
 }
 
-#left, #right, #close {
+#left, #right {
   float: left;
   padding-left: 3em;
 }
 
-#lightbox.navigation {
+#close
+
+div#lightbox.navigation {
   position: relative;
-  padding-bottom: 0.5em;
+  margin-bottom: 2em;
 }
 
 #lightbox-image img {

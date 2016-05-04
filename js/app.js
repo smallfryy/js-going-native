@@ -47,10 +47,14 @@ function returnPhotoArray(scaryJSON){
  
 
 // Main Application Logic 
-function buildPhotoViewer(data){
+function buildPhotoViewer(data) {
+  
   var photos = returnPhotoArray(data);
+  
   for (i = 0; i < photos.length; i++) {
+   
     appendPhotoToGrid(photos[i]);
+    
     buildPhotoLightBox(photos[i]);
   }
 
@@ -60,30 +64,30 @@ function buildPhotoViewer(data){
 // User Interactions
 
 function hideLightBox(){
-   // hide the lightbox
   document.getElementById("lightbox").style.visibility = "hidden";
 
 };
 
 function showLightBox(url) {
-
+  var photo = photoArray[currentPhotoIndex];
+  var title = photo.title;
   document.getElementById("lightbox").style.visibility = "visible";
-  document.getElementById('lightbox-image').innerHTML = '<img src="' + url + '"/>';
-  console.log(url);
+  document.getElementById('lightbox-image').innerHTML = '<img src="' + url + '"/>' + '<div class="title">' + title + '</div>' ;
 };
 
 
 
 function navigateRight(data) {
   var photo = photoArray[currentPhotoIndex];
+  var title = photo.title;
   
   var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
  
-  if (currentPhotoIndex < photoArray.length){
+  if (currentPhotoIndex < photoArray.length) {
     
     currentPhotoIndex += 1;
   
-    document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>';
+    document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>' + '<div class="title">' + photo.title + '</div>';
 
   }
 
@@ -91,6 +95,7 @@ function navigateRight(data) {
 
 function navigateLeft(data){
   var photo = photoArray[currentPhotoIndex];
+  var title = photo.title;
   
   var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
 
@@ -98,7 +103,7 @@ function navigateLeft(data){
   
     currentPhotoIndex -= 1;
 
-    document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>';
+    document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>' + '<div class="title">' + photo.title + '</div>';
 
   }
 
@@ -134,9 +139,9 @@ function buildThumbnailDiv(photo){
 
 function buildPhotoLightBox(photo)  {
   var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
-    
-  var title = photo.title;
+  var title = photo.title;  
+
   // grab lightbox div 
-  document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>' + title;
+   document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>' + '<div class="title">' + photo.title + '</div>';
  }
 
