@@ -18,11 +18,13 @@ So, why no JQuery? 😱 In this exercise I'm going under the hood of AJAX reques
 ## Cross-Browser View
 - This should run on latest verison of Chrome, Safari, Firefox, IE.
 
-## Christmas Wish List
-- Integrate with Aframe
-- Some CSS animation on front-end
+## A Note about Responsiveness
+- CSS has been styled for two types of media formatting: screens of min-width : 720px and max-width: 720px.
+
+## Christmas Wish List (if I wanted to use JQuery)
+- Integrate with Aframe!
 - API unit testing
 - Tests in Selenium, Cucumber
 
 ## Blogging 
-- 
+- I plan to write about my experiences with this project on my blog: blog.holly-peck.com.

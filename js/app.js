@@ -44,7 +44,6 @@ function showLightBox(url) {
   document.getElementById("lightbox").style.visibility = "visible";
 };
 
-
 function navigateRight(data) {
   var photo = photoArray[currentPhotoIndex];
   if (currentPhotoIndex < photoArray.length) {
