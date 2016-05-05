@@ -133,28 +133,13 @@ div.title {
     margin: 0.2em;
     padding: 0.2em; 
 }
-
-  .image-box img {
-    width: 100%; 
-    height: 200px; 
-  } 
   
   #lightbox { 
-    width:550px; 
-    height:750px; 
+    width:200px; 
+    height:300px; 
     position:relative; 
     left:50%; top:50%; 
     margin:-325px 0 0 -225px; 
-  }
-
-  #lightbox-image img {
-    max-width: 200px;
-    height: auto;
-  }
-
-  #lightbox-content img {
-    padding-top: 20px
-    height: 300px;
   }
 }
 

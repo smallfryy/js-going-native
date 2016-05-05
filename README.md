@@ -16,7 +16,7 @@ Since Northwest Coast Native art is my jam -- and since I've spent a lot of time
 
 ## User Experience - Practice
 1. User arrives at a page and sees a 4x4 grid of photo images.  
-1a. These image thumbnails are popualted via Flikr API.
+1a. These image thumbnails are popualted via Flickr API.
 2. User selects an image and sees it expand, lightbox-style, while other images dim in the background. 
 3. User navigates through photo library (next/previous photos). Photos must display corresponding photo tile. 
 4. User minimizes photo to return to thumbnail gallery. 
