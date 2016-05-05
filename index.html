@@ -19,29 +19,27 @@
       <h1 class="title">GOING NATIVE</h1>
     </div>
 
-    <div id="photo-grid">
+      <div id="photo-grid"></div>
 
-      <div id="lightbox" visibility="hidden">
-
-        <div class="navigation">
-          <div id="prev" onclick="navigateLeft()"> 👈  </div>
-          <div id="close" onclick="hideLightBox()"> ❌ </div>
-          <div id="next" onclick="navigateRight()">  👉 </div>
-        </div>
-
-        <div id="lightbox-content">
-
-          <div class="image" id="lightbox-image" onclick="buildPhotoViewer()"></div>
-        </div>
-      </div>
-
-    </div>
-
+  
 
     <div id="footer">
       Made with &hearts; by Holly Peck. &copy; 2016 Fork my repo on <a href="#">GitHub.</a>
     </div>
 
+  </div>
+<div id="lightbox-wrapper">
+    <div id="lightbox">
+            <div class="navigation">
+                <div id="prev" onclick="navigateLeft()"> ??  </div>
+                <div id="close" onclick="hideLightBox()"> ? </div>
+                <div id="next" onclick="navigateRight()">  ?? </div>
+            </div>
+
+            <div id="lightbox-content">
+        <div class="image" id="lightbox-image" onclick="buildPhotoViewer()"></div>
+            </div>
+          </div>
   </div>
 </body>
 
@@ -49,7 +47,6 @@
 
 <script>
   var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=13b1d783bf00e8dcbd3c45f47097c796&tags=bill+reid&per_page=24&format=json&nojsoncallback=1";
-
   window.onload = function(){
     getHTTP(apiURL, buildPhotoViewer); 
   }
