@@ -22,15 +22,17 @@
     <div id="photo-grid">
     <!-- photo thumbnails here -->
 
+    <div id="lightbox-wrapper">
     <div id="lightbox">
 
       <div class="navigation">
-        <div id="left" onclick="navigateLeft()"> 👈 ---- </div>
-        <div id="right" onclick="navigateRight()"> ---- 👉 </div>
-        <div id="close" onclick="hideLightBox()"> X </div>
+        <div id="prev" onclick="navigateLeft()"> 👈 ---- </div>
+        <div id="next" onclick="navigateRight()"> ---- 👉 </div>
+        <div id="close" onclick="hideLightBox()"> ❌ </div>
       </div>
       
       <div class="image" id="lightbox-image" onclick="buildPhotoViewer()"></div>
+    </div>
     </div>
 
     </div>

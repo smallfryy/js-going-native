@@ -84,6 +84,8 @@ function navigateRight(data) {
   var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
  
   if (currentPhotoIndex < photoArray.length) {
+    // I'm getting an error when I navigate through the array of photos 
+    // at index last because then its setting photo as undefined. 
     
     currentPhotoIndex += 1;
   
@@ -108,7 +110,6 @@ function navigateLeft(data){
   }
 
 };
-
 
 
 // DOM Manipulation

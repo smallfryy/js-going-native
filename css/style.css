@@ -22,7 +22,7 @@ body {
 div#wrapper {
   min-height: 100%;
   position: relative;
-  padding-bottom: 10em;
+  padding-bottom: 0;
 }
 
 
@@ -45,8 +45,8 @@ div.title {
 
 #photo-grid {
   height: 100%;
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 div#wrapper div#footer {
@@ -63,7 +63,8 @@ div#wrapper div#footer {
 
 div.thumbnail div.title {
   font-size: .7em;
-  margin-bottom: 3em;
+  font-style: italic;
+  margin-bottom: 2em;
 }
 
 div.thumbnail {
@@ -86,17 +87,27 @@ div.thumbnail {
   height:200px; 
 }
 
-div#lightbox { 
+div#lightbox {
+  top: 25%;
+  left: 25%; 
   position: fixed;
   -moz-box-shadow:0 0 25px #111;
 }
 
-#left, #right {
-  float: left;
-  padding-left: 3em;
+#prev {
+  left: 0;
+  top: 0;
 }
 
-#close
+#next {
+  right: 0;
+  top: 0;
+}
+
+#close {
+  top: 10%;
+  left: 70%;
+}
 
 div#lightbox.navigation {
   position: relative;
@@ -104,10 +115,16 @@ div#lightbox.navigation {
 }
 
 #lightbox-image img {
- max-width: 400px;
- max-height: 400px;
- margin:1em auto;
+ max-width: 100%;
+ height: auto;
  position: fixed;
+}
+
+#lightbox-wrapper {
+  position: fixed;
+  background:  width: 100%;
+  height: 100%; }
+  
 }
 
 .thumbnail img:hover {
