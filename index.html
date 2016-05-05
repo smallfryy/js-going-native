@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- add favicon later -->
+  <title>Holly Peck | Going Native</title>
+  <link rel="icon" type="image/png" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+    <div id="header">
+      <h1 class="title">GOING NATIVE</h1>
+    </div>
+
+    <div id="photo-grid"></div>
+
+    <div id="footer">
+      Made with &hearts; by Holly Peck. &copy; 2016 Fork my repo on <a href="https://github.com/smallfryy/js-going-native">GitHub.</a>
+    </div>
+
+  </div>
+  <div id="lightbox-wrapper">
+    <div id="lightbox">
+      <div class="navigation">
+        <div id="prev" onclick="navigateLeft()"> <<--  </div>
+        <div id="close" onclick="hideLightBox()"> X </div>
+        <div id="next" onclick="navigateRight()">  -->> </div>
+      </div>
+
+      <div id="lightbox-content">
+        <div class="image" id="lightbox-image" onclick="buildPhotoViewer()"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="js/app.js"></script>
+
+<script>
+  var apiURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=13b1d783bf00e8dcbd3c45f47097c796&tags=bill+reid&per_page=24&format=json&nojsoncallback=1";
+  window.onload = function(){
+    getHTTP(apiURL, buildPhotoViewer); 
+  }
+</script>
+
+</html>

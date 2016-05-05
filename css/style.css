@@ -1,0 +1,173 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:300);
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Source Code Pro';
+  color: #000;
+  font-size: 1em;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: absolute;
+  padding-bottom: 2em;
+}
+
+#header {
+  background-color: #fff;
+  border-bottom: 0.5px dashed #000;
+  height: 2em;
+  padding-bottom: 2em;
+}
+
+h1.title {
+  text-align: center;
+  text-shadow: 8px 8px 0 rgba(0,128,128,0.3);
+}
+
+div.title {
+  text-align: center;
+  font-size: 0.75em;
+}
+
+#photo-grid {
+  height: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#footer {
+  width: 100%;
+  text-align: center;
+  font-size: .8em;
+  position: absolute;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  bottom: 0;
+  left: 0;
+}
+
+.thumbnail .title {
+  font-size: .7em;
+  font-style: italic;
+  margin-bottom: 1.5em;
+}
+
+.thumbnail {
+  float: left;
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  margin: 0.5em;
+  padding: 0.5em; 
+}
+
+.image-box img {
+  width: 100%; 
+  height: 200px; 
+}
+
+#prev, #close {
+  float: left;
+  top: 0;
+  left: 0;
+}
+
+#lightbox-wrapper {
+  position: fixed;
+  background: rgb(100,100,100);
+  visibility: hidden; 
+  width: 100%;
+  height: 100%; 
+  color: rgba(85, 84, 89, 0.9);
+}
+  
+.thumbnail img:hover {
+  transform: scale(1.15);
+  box-shadow: 1px 2px 10px rgba(85, 84, 89, 0.6); 
+}
+
+
+#lightbox {
+  width:550px;
+  height:750px;
+  position:relative;
+  left:50%;
+  top:50%;
+  margin:-325px 0 0 -225px;
+}
+
+#lightbox .title{
+  color: white;
+  text-align: left;
+  font-size: 1em;
+}
+
+#lightbox .navigation {
+ color: white;
+}
+
+#close, #next, #prev: {
+  right: 0;
+  top: 0;
+}
+
+/* small screens */
+@media only screen and (max-width : 720px) {
+
+  .thumbnail {
+    float: left;
+    text-align: center;
+    height: 250px;
+    width: 250px;
+    margin: 0.2em;
+    padding: 0.2em; 
+}
+
+  .image-box img {
+    width: 100%; 
+    height: 200px; 
+  } 
+
+  div#lightbox-content {
+    padding-top: 20px; 
+  }
+
+  #lightbox-content img {
+    padding-top: 20px
+    height: 300px;
+  }
+}
+
+/* large screens */
+@media only screen and (min-width : 720px) {
+
+  .thumbnail {
+    float: left;
+    text-align: center;
+    height: 250px;
+    width: 250px;
+    margin: 0.6em;
+    padding: 0.5em; 
+  }
+
+  .image-box img {
+    width: 100%; 
+    height: 200px; 
+  }
+
+  #lightbox-image img {
+    width: 400px;
+    height: auto;
+  }
+}
