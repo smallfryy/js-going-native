@@ -19,26 +19,25 @@
       <h1 class="title">GOING NATIVE</h1>
     </div>
 
-      <div id="photo-grid"></div>
-
+    <div id="photo-grid"></div>
 
     <div id="footer">
       Made with &hearts; by Holly Peck. &copy; 2016 Fork my repo on <a href="https://github.com/smallfryy/js-going-native">GitHub.</a>
     </div>
 
   </div>
-<div id="lightbox-wrapper">
+  <div id="lightbox-wrapper">
     <div id="lightbox">
-            <div class="navigation">
-                <div id="prev" onclick="navigateLeft()"> ??  </div>
-                <div id="close" onclick="hideLightBox()"> ? </div>
-                <div id="next" onclick="navigateRight()">  ?? </div>
-            </div>
+      <div class="navigation">
+        <div id="prev" onclick="navigateLeft()"> <<--  </div>
+        <div id="close" onclick="hideLightBox()"> X </div>
+        <div id="next" onclick="navigateRight()">  -->> </div>
+      </div>
 
-            <div id="lightbox-content">
+      <div id="lightbox-content">
         <div class="image" id="lightbox-image" onclick="buildPhotoViewer()"></div>
-            </div>
-          </div>
+      </div>
+    </div>
   </div>
 </body>
 
