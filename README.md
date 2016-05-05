@@ -12,7 +12,7 @@ Since Northwest Coast Native art is my jam -- and since I've spent a lot of time
 - JavaScript in the raw 🐟 
 
 ## User Experience - Method
-- Typically, when I approach a problem, I think about code from frontend (UX) to backend. This is usually when I perform a hypoethical/imaginary "ethnography" of my end user and ask myself: 1) what does the user want to see?; 2) how can the user interact with my application; 3) what features in my application can epower the user with impactful intractive experiences? 
+- Typically, when I approach a problem, I think about code from frontend (UX) to backend. I ask myself: 1) what does my user want to see? 2) How can my user interact with my application? 3) what features in my application can epower my user with impactful intractive experiences? 
 
 ## User Experience - Practice
 1. User arrives at a page and sees a 4x4 grid of photo images.  
