@@ -29,8 +29,8 @@ function getHTTP(url, callBack) {
           if (callBack) 
               callBack(data); 
 
-          } else {error: "there was a problem"}
-      }
+          } else {error: "there was a problem"};
+      };
   httpRequest.open('GET', url);
 
   httpRequest.send(); // asynch request sent to server 
@@ -62,7 +62,6 @@ function buildPhotoViewer(data) {
 
 
 // User Interactions
-
 function hideLightBox(){
   document.getElementById("lightbox").style.visibility = "hidden";
 
@@ -76,23 +75,24 @@ function showLightBox(url) {
 };
 
 
-function navigateRight(data) {
+function navigateRight(data, photo) {
   var photo = photoArray[currentPhotoIndex];
-  var title = photo.title;
-  
   var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
  
   if (currentPhotoIndex < photoArray.length) {
-    // I'm getting an error when I navigate through the array of photos 
-    // at index last because then its setting photo as undefined. 
-    
     currentPhotoIndex += 1;
-  
     document.getElementById('lightbox-image').innerHTML = '<img src="' + imgURL + '"/>' + '<div class="title">' + photo.title + '</div>';
-
   }
 
-};
+}
+
+
+function hideLastRightArrow(data){
+    if (currentPhotoIndex = 25) {
+      console.log("helo");
+    document.getElementById('close').style.visibility = "hidden";
+  }
+}
 
 function navigateLeft(data){
   var photo = photoArray[currentPhotoIndex];
@@ -135,7 +135,7 @@ function buildThumbnailDiv(photo){
   iDiv.innerHTML = inner;
 
   return iDiv;
-};
+}
 
 function buildPhotoLightBox(photo)  {
   var imgURL = 'https://farm' + photo.farm +'.staticflickr.com/' + photo.server + '/'+ photo.id + '_' + photo.secret + '.jpg';
