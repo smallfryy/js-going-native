@@ -18,7 +18,7 @@ function getHTTP(url, callBack) {
           } else {error: "there was a problem"};
       };
   httpRequest.open('GET', url);
-  // asynch request sent to server 
+  // Asynch request sent to server 
   httpRequest.send(); 
 };
 
