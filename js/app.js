@@ -76,7 +76,6 @@ function showLightBox(url) {
 };
 
 
-
 function navigateRight(data) {
   var photo = photoArray[currentPhotoIndex];
   var title = photo.title;

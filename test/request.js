@@ -1,7 +1,6 @@
 // API unit tests 
 // maybs some cucumber?
 
-
 // it('responds with json', function (done) {
 //   request(app)
 //     .get('/')
