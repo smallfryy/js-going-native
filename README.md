@@ -27,15 +27,13 @@ Since Northwest Coast Native art is my jam -- and since I've spent a lot of time
 ## Cross-Browser View
 - This should run on latest version of Chrome, Safari, Firefox, IE: ✅
 
-## A Note about Responsiveness
+## A Note About Responsiveness
 - CSS has been styled for two types of media formatting: screens of min-width : 720px and max-width: 720px. 
 
 ## Version II Wish List
 - Integrate with Aframe or D3.js for unique front-end experience.
 - API unit tests
 - Tests in Selenium, Cucumber
-- Cross-browser responsiveness 
-- Allowing users to navigate through images on multiple devices (nexus, iphone, ipad) while maintaining DOM integrity.
 
 ## Blogging 
 - I plan to write about my experiences with this project on my blog: www.blog.holly-peck.com. 
