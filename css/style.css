@@ -152,26 +152,11 @@ div.title {
     padding: 0.5em; 
   }
 
-  .image-box img {
-    width: 100%; 
-    height: 200px; 
-  }
-
    #lightbox { 
     width:400px; 
     height:500px; 
     position:relative; 
     left:50%; top:50%; 
     margin:-250px 0 0 -200px; 
-  }
-
-  #lightbox-image img {
-    width: 400px;
-    height: auto;
-  }
-
-   #lightbox-content img {
-    padding-top: 20px;
-    height: 300px;
   }
 }
