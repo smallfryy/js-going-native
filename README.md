@@ -38,4 +38,4 @@ Since Northwest Coast Native art is my jam -- and since I've spent a lot of time
 - Allowing users to navigate through images on multiple devices (nexus, iphone, ipad) while maintaining DOM integrity.
 
 ## Blogging 
-- I plan to write about my experiences with this project on my blog: blog.holly-peck.com. 
+- I plan to write about my experiences with this project on my blog: www.blog.holly-peck.com. 
